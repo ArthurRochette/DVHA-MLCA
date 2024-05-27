@@ -1,4 +1,4 @@
-numpy==1.26.4
+numpy==1.19.5
 pydicom==2.4.4
 shapely==2.0.4
 tqdm==4.66.4
