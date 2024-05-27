@@ -1,4 +1,4 @@
-numpy
-pydicom
-shapely[vectorized]
-tqdm
+numpy==1.26.4
+pydicom==2.4.4
+shapely==2.0.4
+tqdm==4.66.4
