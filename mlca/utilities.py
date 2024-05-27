@@ -39,14 +39,14 @@ def get_xy_path_lengths(shapely_object):
 
     """
     path = np.array([0.0, 0.0])
-    if shapely_object.type == "GeometryCollection":
+    if shapely_object.geom_type == "GeometryCollection":
         for geometry in shapely_object.geoms:
             if geometry.type in {"MultiPolygon", "Polygon"}:
                 path = np.add(path, get_xy_path_lengths(geometry))
-    elif shapely_object.type == "MultiPolygon":
-        for shape in shapely_object:
+    elif shapely_object.geom_type == "MultiPolygon":
+        for shape in shapely_object.geoms:
             path = np.add(path, get_xy_path_lengths(shape))
-    elif shapely_object.type == "Polygon":
+    elif shapely_object.geom_type == "Polygon":
         x, y = np.array(shapely_object.exterior.xy[0]), np.array(
             shapely_object.exterior.xy[1]
         )
